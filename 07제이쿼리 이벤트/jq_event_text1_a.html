@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+    <ul class="gnb">
+        <button><a href="">menu1</a></button>
+        <button><a href="">menu2</a></button>
+        <button><a href="">menu3</a></button>
+        <button><a href="">menu4</a></button>
+    </ul>
+    <script>
+        // var beforeMenu = null;
+    
+        // $(".gnb button a").on("mouseover focus",function (params) {
+        //     if(beforeMenu != null){
+        //         beforeMenu.css("background","none");
+        //     }
+        //     $(this).css("background-color","#0ff");
+        //     beforeMenu = $(this)
+        // })
+
+        // $(".gnb").on("blur mouseleave",function (params) {
+        //     if(beforeMenu){
+        //         beforeMenu.css("background","none");
+        //     }
+        // })
+
+
+
+
+
+        $("ul a").on("focus mouseover",function (params) {
+            $(this).css("background-color","#0ff")
+        })
+
+        $("ul a").on("blur mouseout",function (params) {
+            $(this).css("background","none");
+        })
+    </script>
+</body>
+</html>

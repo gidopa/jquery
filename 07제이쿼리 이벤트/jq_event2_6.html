@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+        <p><button class="btn_2">버튼2</button></p>
+    </div>    
+
+    <script>
+
+        // 이벤트를 등록하고 class 값을 생성하면 이벤트가 정상적으로 등록되지 않는다.
+        // class 를 먼저 만들거나 라이브 이벤트 등록 방식을 사용해야 한다.
+        $(".btn_1.on").on("mouseover focus",function () {
+            alert("hello");
+        })
+        $(".btn_1").addClass("on");
+
+        // 라이브 이벤트 등록 방식
+        $(document).on("mouseover focus",".btn_2.on",function () {
+            alert("welcome")
+        })
+        $(".btn_2").addClass("on")
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+    </div>
+    <p>
+        <button class="del_1">버튼1 이벤트 해제</button>
+        <button class="del_2">버튼2 이벤트 해제</button>
+    </p>
+    <script>
+        // 버튼1 이벤트 등록
+        $(".btn_1").on("mouseover",function (params) {
+            alert("hello")
+        })
+        // 버튼2 이벤트 등록
+        $(document).on("mouseover",".btn_2",function (params) {
+            alert("welcome")
+        })
+        // 버튼2 생성
+        var btn_2 = $("<p><button class='btn_2'>버튼2</button></p>")
+        $("#wrap").append(btn_2);
+
+        // 버튼1 이벤트 해제 클릭시 버튼1 이벤트 해제
+        $(".del_1").click(function (params) {
+            $(".btn_1").off("mouseover")
+        })
+
+        // 버튼2 이벤트 해제 클릭시 버튼2 이벤트 해제
+        $(".del_2").click(function (params) {
+            $(document).off("mouseover",".btn_2");
+        })
+
+    </script>
+</body>
+</html>
